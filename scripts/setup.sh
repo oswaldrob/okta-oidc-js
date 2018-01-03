@@ -15,6 +15,10 @@ git config --global user.name "oktauploader-okta"
 # Use newer, faster npm
 npm install -g npm@5.0.3
 
+# Update node version
+npm install -g n
+n 8.9.4
+
 # Install required dependencies
 npm install -g lerna
 
