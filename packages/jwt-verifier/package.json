@@ -14,7 +14,9 @@
   },
   "scripts": {
     "test": "mocha --timeout 10000 test/spec",
-    "tck-test": "(ls ./okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar || curl $npm_package_config_tck_jar -L -o okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar) && $npm_package_config_tck_setup_env && mkdir -p target && $npm_package_config_tck_command || echo done"
+    "tck-test": "(ls ./okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar || curl $npm_package_config_tck_jar -L -o okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar) && $npm_package_config_tck_setup_env && mkdir -p target && $npm_package_config_tck_command || echo done",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "okta",
@@ -30,7 +32,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "jwks-rsa": "^1.2.0",
-    "njwt": "^0.4.0"
+    "njwt": "^0.4.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "cors": "^2.8.4",
@@ -40,5 +43,6 @@
     "nock": "^9.0.14",
     "request": "^2.81.0",
     "timekeeper": "^1.0.0"
-  }
+  },
+  "snyk": true
 }
