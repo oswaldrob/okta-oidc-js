@@ -21,7 +21,9 @@
   },
   "scripts": {
     "test": "webdriver-manager update && protractor test/e2e/conf.js",
-    "tck-test": "(ls ./okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar || curl $npm_package_config_tck_jar -L -o okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar) && $npm_package_config_tck_setup_env && mkdir -p target && $npm_package_config_tck_command || echo done"
+    "tck-test": "(ls ./okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar || curl $npm_package_config_tck_jar -L -o okta-oidc-tck-0.2.1-SNAPSHOT-shaded.jar) && $npm_package_config_tck_setup_env && mkdir -p target && $npm_package_config_tck_command || echo done",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=6"
@@ -36,7 +38,8 @@
     "negotiator": "^0.6.1",
     "openid-client": "^1.12.0",
     "passport": "^0.3.2",
-    "uuid": "^3.1.0"
+    "uuid": "^3.1.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "cross-env": "^5.1.1",
@@ -45,5 +48,6 @@
     "protractor": "^5.1.2",
     "server-destroy": "^1.0.1",
     "webdriver-manager": "^12.0.6"
-  }
+  },
+  "snyk": true
 }
