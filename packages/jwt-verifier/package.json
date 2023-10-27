@@ -29,7 +29,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "jwks-rsa": "^1.2.0",
+    "jwks-rsa": "^2.0.0",
     "njwt": "^0.4.0"
   },
   "devDependencies": {
